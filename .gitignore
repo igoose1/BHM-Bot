@@ -105,3 +105,6 @@ venv.bak/
 
 # project db
 *.db
+
+# bot's token
+/token
