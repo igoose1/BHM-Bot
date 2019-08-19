@@ -14,7 +14,7 @@ class Admin(Model):
 class Post(Model):
 	photos = CharField(max_length=1024, null=True, default='[]')
 	name = CharField(max_length=128, default='')
-	year = IntegerField(null=True, default=1970)
+	year = CharField(max_length=8, null=True, default='1970')
 	regisseur = CharField(max_length=128, null=True, default='')
 	overview = TextField(default='')
 	conclusion = TextField(null=True, default='')
