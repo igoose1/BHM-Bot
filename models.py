@@ -17,6 +17,7 @@ class Post(Model):
 
 class Admin(Model):
 	telegram_id = IntegerField()
+	state = CharField(max_length=64, null=True)
 
 	class Meta:
 		database = db
