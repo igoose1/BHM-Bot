@@ -27,11 +27,11 @@ handlers = (
     CommandHandler(
         'pass',
         mp.miss,
-        filters=(filters.filters.IsAdmin() & filters.IsFilling() & filters.CanBeMissed())
+        filters=(filters.IsAdmin() & filters.IsFilling() & filters.CanBeMissed())
     ),
     MessageHandler(
-        mp.fill,
-        filters=(filters.IsAdmin() & filters.IsFilling())
+        (filters.IsAdmin() & filters.IsFilling()),
+        mp.fill
     )
 )
 
