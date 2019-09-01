@@ -26,7 +26,7 @@ def fill(bot, update):
     )
     now_ind = order.index(post.author.state[len('conf'):])
     next_ind = now_ind + 1
-    post.author.state = None if next_ind >= len(order) else order[next_ind]
+    post.author.state = None if next_ind >= len(order) else 'conf' + {order[next_ind]}
 
     if post.author.state is not None:
         attr = getattr(post, order[now_ind])
