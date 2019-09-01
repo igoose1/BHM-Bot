@@ -32,7 +32,7 @@ def ask_next(update, now_ind, post):
 
 def start(bot, update):
     with open('start.txt', 'r') as f:
-        update.message.reply(f.read)
+        update.message.reply(f.read())
 
 
 def miss(bot, update):
