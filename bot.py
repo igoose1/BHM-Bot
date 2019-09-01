@@ -10,7 +10,7 @@ with open('token', 'r') as f:
     TOKEN = f.read().strip()
 
 # initialize updater
-updater = Update(token=TOKEN)
+updater = Updater(token=TOKEN)
 dispatcher = updater.dispatcher
 
 # describing commands
@@ -21,22 +21,22 @@ handlers = (
     ),
     CommandHandler(
         'new',
-        filters=(filters.IsAdmin & ~filters.IsFilling),
-        mp.new
+        mp.new,
+        filters=(filters.IsAdmin & ~filters.IsFilling)
     ),
     CommandHandler(
         'reset',
-        filters=(filters.IsAdmin & filters.IsFilling),
-        mp.reset
+        mp.reset,
+        filters=(filters.IsAdmin & filters.IsFilling)
     ),
     CommandHandler(
         'pass',
-        filters=(filters.filters.IsAdmin & filters.IsFilling & filters.CanBeMissed),
-        mp.miss
+        mp.miss,
+        filters=(filters.filters.IsAdmin & filters.IsFilling & filters.CanBeMissed)
     ),
     MessageHandler(
-        filters.IsAdmin & filters.IsFilling,
-        mp.fill
+        mp.fill,
+        filters=(filters.IsAdmin & filters.IsFilling)
     )
 )
 
