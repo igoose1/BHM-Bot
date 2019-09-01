@@ -25,11 +25,6 @@ handlers = (
         filters=(filters.IsAdmin & ~filters.IsFilling)
     ),
     CommandHandler(
-        'reset',
-        mp.reset,
-        filters=(filters.IsAdmin & filters.IsFilling)
-    ),
-    CommandHandler(
         'pass',
         mp.miss,
         filters=(filters.filters.IsAdmin & filters.IsFilling & filters.CanBeMissed)
