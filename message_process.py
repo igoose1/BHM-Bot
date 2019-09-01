@@ -11,6 +11,11 @@ order = (
 )
 
 
+def start(bot, update):
+    with open('start.txt', 'r') as f:
+        update.message.reply(f.read)
+
+
 def new(bot, update):
     post = Post(
         Post.author.telegram_id == update.message.from_chat.id
